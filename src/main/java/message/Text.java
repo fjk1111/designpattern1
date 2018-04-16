@@ -1,14 +1,22 @@
 package message;
 
-public class Text implements message
+public class Text implements Message
 {
-    public String send()
+    String message;
+    public Text(String message)
     {
-        return null;
+        this.message = message;
     }
 
-    public String receice()
+    public String send(String sender)
     {
-        return null;
+        System.out.println(sender + " 메시지 전송 : " + message);
+        return "성공";
+    }
+
+    public String receive()
+    {
+        System.out.println("텍스트 메시지 수신");
+        return "성공";
     }
 }

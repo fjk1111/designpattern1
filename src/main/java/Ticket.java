@@ -1,14 +1,18 @@
+import message.Message;
+
 public class Ticket
 {
-    String id = "";
-    String messageId;
+    String ticketStatus;
+
     public void start()
     {
-        System.out.print("상담시작");
+        System.out.println("상담시작");
+        this.ticketStatus = "start";
     }
 
     public void stop()
     {
         System.out.print("상담종료");
+        this.ticketStatus = "end";
     }
 }

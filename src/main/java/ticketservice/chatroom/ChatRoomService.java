@@ -1,5 +1,6 @@
 package ticketservice.chatroom;
 
+import ticketservice.message.Message;
 import ticketservice.model.ChatRoom;
 
 public class ChatRoomService implements IChatRoomService
@@ -11,9 +12,9 @@ public class ChatRoomService implements IChatRoomService
         this.chatroom = chatroom;
     }
 
-    public boolean sendMessage(String user, String message)
+    public boolean sendMessage(String user, Message message)
     {
-        System.out.println(user + " 메시지 전송 : " + message);
+        System.out.println(user + " 메시지 전송 : " + message.getContents());
         return true;
     }
 }

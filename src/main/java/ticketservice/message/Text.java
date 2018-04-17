@@ -1,4 +1,4 @@
-package message;
+package ticketservice.message;
 
 public class Text implements Message
 {

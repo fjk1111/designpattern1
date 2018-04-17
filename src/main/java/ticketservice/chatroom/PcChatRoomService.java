@@ -17,4 +17,9 @@ public class PcChatRoomService implements IChatRoomService
         System.out.println(user + " 메시지 전송 : " + message.getContents());
         return true;
     }
+
+    public boolean sendPush(String user, Message message)
+    {
+        return false;
+    }
 }

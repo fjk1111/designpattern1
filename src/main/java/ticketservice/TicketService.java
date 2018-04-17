@@ -1,6 +1,8 @@
 package ticketservice;
 
-import ticketservice.chatroom.ChatRoomService;
+import ticketservice.chatroom.IChatRoomService;
+import ticketservice.chatroom.PcChatRoomService;
+import ticketservice.chatroom.SimpleChatRoomFactory;
 import ticketservice.model.ChatRoom;
 import ticketservice.model.Ticket;
 
@@ -21,7 +23,7 @@ public class TicketService implements ITicketService
         return accountIds.get(0);
     }
 
-    public Ticket newTalk(String accountId, String customerId)
+    public Ticket newTalk(String accountId, String customerId, String channelType)
     {
         Ticket ticket = new Ticket();
         ticket.setId("uuid");
@@ -31,9 +33,9 @@ public class TicketService implements ITicketService
         ChatRoom chatroom = new ChatRoom();
         chatroom.setAccountId(accountId);
         chatroom.setCustomerId(customerId);
-        ChatRoomService chatRoomService = new ChatRoomService(chatroom);
-        ticket.setChatroom(chatRoomService);
+        IChatRoomService chatRoomService = SimpleChatRoomFactory.createChatRoom(channelType, chatroom);
 
+        ticket.setChatroom(chatRoomService);
         return ticket;
     }
 }

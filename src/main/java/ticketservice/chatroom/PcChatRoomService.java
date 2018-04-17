@@ -3,11 +3,11 @@ package ticketservice.chatroom;
 import ticketservice.message.Message;
 import ticketservice.model.ChatRoom;
 
-public class ChatRoomService implements IChatRoomService
+public class PcChatRoomService implements IChatRoomService
 {
     ChatRoom chatroom;
 
-    public ChatRoomService(ChatRoom chatroom)
+    public PcChatRoomService(ChatRoom chatroom)
     {
         this.chatroom = chatroom;
     }
